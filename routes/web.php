@@ -20,6 +20,7 @@ Route::post('/contact', [PageController::class, 'submitContact'])
 Route::get('/privacy-policy', [PageController::class, 'privacy'])->name('page.privacy');
 Route::get('/disclaimer', [PageController::class, 'disclaimer'])->name('page.disclaimer');
 Route::get('/terms-and-conditions', [PageController::class, 'tos'])->name('page.tos');
+Route::get('/pedoman-media-siber', [PageController::class, 'pedomanMediaSiber'])->name('page.pedoman-media-siber');
 
 // Sitemap.xml (Dynamic)
 Route::get('/sitemap.xml', function () {
@@ -47,6 +48,10 @@ Route::get('/sitemap.xml', function () {
         ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY));
 
     $sitemap->add(Url::create(route('page.tos'))
+        ->setPriority(0.5)
+        ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY));
+
+    $sitemap->add(Url::create(route('page.pedoman-media-siber'))
         ->setPriority(0.5)
         ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY));
 

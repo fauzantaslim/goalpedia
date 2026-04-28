@@ -66,4 +66,13 @@ class PageController extends Controller
             'settings' => $settings,
         ]);
     }
+
+    public function pedomanMediaSiber(GeneralSettings $settings)
+    {
+        $this->configureSeo('Pedoman Media Siber', 'Pedoman Pemberitaan Media Siber sesuai dengan ketentuan Dewan Pers Indonesia.', null, 'WebPage');
+
+        return view('pages.pedoman-media-siber', [
+            'settings' => $settings,
+        ]);
+    }
 }

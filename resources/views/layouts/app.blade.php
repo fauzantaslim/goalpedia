@@ -488,6 +488,12 @@
                                         <span class="text-[var(--color-text-secondary)] opacity-0 transition-opacity group-hover:opacity-100">&rarr;</span>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="{{ route('page.pedoman-media-siber') }}" class="group flex w-full items-center justify-between border-b border-[var(--color-border)] pb-2 text-[13px] font-bold text-[var(--color-text-primary)] transition-colors hover:text-[var(--color-accent-primary)]">
+                                        Pedoman Media Siber
+                                        <span class="text-[var(--color-text-secondary)] opacity-0 transition-opacity group-hover:opacity-100">&rarr;</span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
