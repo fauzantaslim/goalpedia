@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /admin/login
+Disallow: /filament/
+Disallow: /vendor/
+
+Sitemap: https://finlogy.fauzantaslim.biz.id/sitemap.xml
