@@ -34,10 +34,19 @@ class AppServiceProvider extends ServiceProvider
         // Share settings and categories to all views globally
         View::share('settings', app(GeneralSettings::class));
 
-        $cachedCategories = Cache::rememberForever('categories.global_nav', function () {
-            return Category::query()->where('is_visible', true)->orderBy('name')->get()->toArray();
-        });
-        View::share('categories', Category::hydrate($cachedCategories));
+        if (Schema::hasTable('categories')) {
+            $cachedCategories = Cache::rememberForever('categories.global_nav', function () {
+                return Category::query()
+                    ->where('is_visible', true)
+                    ->orderBy('name')
+                    ->get()
+                    ->toArray();
+            });
+
+            View::share('categories', Category::hydrate($cachedCategories));
+        } else {
+            View::share('categories', collect()); // biar aman
+        }
 
         Category::observe(CategoryObserver::class);
         Post::observe(PostObserver::class);
@@ -51,7 +60,7 @@ class AppServiceProvider extends ServiceProvider
             \Storage::extend('google', function ($app, $config) {
                 $options = [];
 
-                if (! empty($config['folderId'] ?? null)) {
+                if (!empty($config['folderId'] ?? null)) {
                     $options['folderId'] = $config['folderId'];
                 }
 
