@@ -103,10 +103,22 @@
 
                         {{-- Cover Image --}}
                         @if($cover = $post->getFirstMediaUrl('post_covers', 'optimized'))
-                            <figure class="mb-10">
-                                <img src="{{ $cover }}" alt="{{ $post->title }}" fetchpriority="high"
-                                     width="1200" height="630"
-                                     class="w-full rounded-lg border border-border object-cover shadow-sm">
+                            <figure class="mb-12">
+                                <a data-fancybox="gallery" data-caption="{{ $post->title_cover ?? $post->title }}" href="{{ $post->getFirstMediaUrl('post_covers') }}" class="block border-2 border-[var(--color-text-primary)]">
+                                    <img src="{{ $cover }}" alt="{{ $post->title }}" title="{{ $post->title_cover ?? $post->title }}" fetchpriority="high"
+                                         width="1200" height="630"
+                                         class="w-full object-cover cursor-zoom-in transition-opacity hover:opacity-95">
+                                </a>
+                                @if($post->title_cover)
+                                    <figcaption class="border-x-2 border-b-2 border-[var(--color-text-primary)] bg-[var(--color-bg-secondary)]/30 px-4 py-3 sm:px-6">
+                                        <div class="flex items-start justify-center gap-2 md:gap-3">
+                                            <div class="mt-1.5 h-1.5 w-1.5 shrink-0 rotate-45 bg-[var(--color-accent-secondary)] hidden md:block"></div>
+                                            <p class="text-center text-[11px] font-medium leading-relaxed text-[var(--color-text-secondary)] md:text-xs">
+                                                {{ $post->title_cover }}
+                                            </p>
+                                        </div>
+                                    </figcaption>
+                                @endif
                             </figure>
                         @endif
 
@@ -135,6 +147,47 @@
                                                                 </div>';
 
                                 $content = $post->content;
+
+                                // Modifikasi gambar dalam konten untuk Fancybox dan Caption
+                                $content = preg_replace_callback('/(<p>\s*)?(<img\s+[^>]+>)(\s*<\/p>)?/i', function($matches) {
+                                    $imgHtml = $matches[2];
+
+                                    preg_match('/src=["\']([^"\']+)["\']/i', $imgHtml, $srcMatch);
+                                    $src = $srcMatch[1] ?? '';
+
+                                    preg_match('/alt=["\']([^"\']*)["\']/i', $imgHtml, $altMatch);
+                                    $alt = $altMatch[1] ?? '';
+
+                                    if (empty($src)) {
+                                        return $matches[0];
+                                    }
+
+                                    $captionHtml = '';
+                                    if (!empty($alt)) {
+                                        $captionHtml = '
+                                            <figcaption class="border-x-2 border-b-2 border-[var(--color-text-primary)] bg-[var(--color-bg-secondary)]/30 px-4 py-3 sm:px-6">
+                                                <div class="flex items-start justify-center gap-2 md:gap-3">
+                                                    <div class="mt-1.5 h-1.5 w-1.5 shrink-0 rotate-45 bg-[var(--color-accent-secondary)] hidden md:block"></div>
+                                                    <p class="not-prose text-center text-[11px] font-medium leading-relaxed text-[var(--color-text-secondary)] md:text-xs">
+                                                        ' . htmlspecialchars($alt) . '
+                                                    </p>
+                                                </div>
+                                            </figcaption>';
+                                    }
+
+                                    $imgHtmlClean = preg_replace('/class=["\'][^"\']*["\']/i', '', $imgHtml);
+                                    $imgHtmlClean = str_replace('<img ', '<img width="1200" height="630" class="w-full object-cover cursor-zoom-in transition-opacity hover:opacity-95 m-0" ', $imgHtmlClean);
+
+                                    return '
+                                        <figure class="my-12 flex flex-col">
+                                            <a data-fancybox="gallery" data-caption="' . htmlspecialchars($alt) . '" href="' . $src . '" class="block border-2 border-[var(--color-text-primary)]">
+                                                ' . $imgHtmlClean . '
+                                            </a>
+                                            ' . $captionHtml . '
+                                        </figure>
+                                    ';
+                                }, $content);
+
                                 $pCount = substr_count($content, '</p>');
                                 $insertAt = $pCount >= 8 ? intval($pCount / 2) : ($pCount >= 4 ? 3 : 2);
 
@@ -145,6 +198,26 @@
                                 }
                             } else {
                                 $content = $post->content;
+                                // Modifikasi gambar juga untuk post tanpa "Baca Juga"
+                                $content = preg_replace_callback('/(<p>\s*)?(<img\s+[^>]+>)(\s*<\/p>)?/i', function($matches) {
+                                    $imgHtml = $matches[2];
+                                    preg_match('/src=["\']([^"\']+)["\']/i', $imgHtml, $srcMatch);
+                                    $src = $srcMatch[1] ?? '';
+                                    preg_match('/alt=["\']([^"\']*)["\']/i', $imgHtml, $altMatch);
+                                    $alt = $altMatch[1] ?? '';
+
+                                    if (empty($src)) return $matches[0];
+
+                                    $captionHtml = '';
+                                    if (!empty($alt)) {
+                                        $captionHtml = '<figcaption class="border-x-2 border-b-2 border-[var(--color-text-primary)] bg-[var(--color-bg-secondary)]/30 px-4 py-3 sm:px-6"><div class="flex items-start justify-center gap-2 md:gap-3"><div class="mt-1.5 h-1.5 w-1.5 shrink-0 rotate-45 bg-[var(--color-accent-secondary)] hidden md:block"></div><p class="not-prose text-center text-[11px] font-medium leading-relaxed text-[var(--color-text-secondary)] md:text-xs">' . htmlspecialchars($alt) . '</p></div></figcaption>';
+                                    }
+
+                                    $imgHtmlClean = preg_replace('/class=["\'][^"\']*["\']/i', '', $imgHtml);
+                                    $imgHtmlClean = str_replace('<img ', '<img class="w-full object-cover cursor-zoom-in transition-opacity hover:opacity-95 m-0" ', $imgHtmlClean);
+
+                                    return '<figure class="my-12 flex flex-col"><a data-fancybox="gallery" data-caption="' . htmlspecialchars($alt) . '" href="' . $src . '" class="block border-2 border-[var(--color-text-primary)]">' . $imgHtmlClean . '</a>' . $captionHtml . '</figure>';
+                                }, $content);
                             }
                         @endphp
 

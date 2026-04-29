@@ -18,6 +18,7 @@
     @googlefonts('poppins')
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @stack('styles')
 </head>
 <body
     class="bg-[var(--color-bg-primary)] font-sans text-[var(--color-text-primary)]"
@@ -514,6 +515,6 @@
 
     </div>
 
-
+    @stack('scripts')
 </body>
 </html>

@@ -6,11 +6,11 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\RichEditor;
-use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieTagsInput;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
@@ -73,7 +73,13 @@ class PostForm
                             ->directory('tmp/post-covers')
                             ->imagePreviewHeight('200')
                             ->columnSpanFull()
-                            ->dehydrated(false),  // handled manually in Create/Edit pages
+                            ->dehydrated(false),
+                        // handled manually in Create/Edit pages
+                        TextInput::make('title_cover')
+                            ->label('Judul Cover')
+                            ->helperText('Judul yang akan muncul di gambar cover')
+                            ->required()
+                            ->maxLength(255),
                     ]),
 
                 Section::make('Publikasi')
@@ -82,9 +88,9 @@ class PostForm
                             ->label('Status')
                             ->required()
                             ->options([
-                                'draft'     => 'Draft',
+                                'draft' => 'Draft',
                                 'published' => 'Published',
-                                'archived'  => 'Archived',
+                                'archived' => 'Archived',
                             ])
                             ->default('draft'),
                         DateTimePicker::make('published_at')

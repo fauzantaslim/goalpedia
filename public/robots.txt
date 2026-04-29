@@ -4,4 +4,4 @@ Disallow: /admin/login
 Disallow: /filament/
 Disallow: /vendor/
 
-Sitemap: https://finlogy.fauzantaslim.biz.id/sitemap.xml
+Sitemap: https://goalpedia.fauzantaslim.biz.id/sitemap.xml

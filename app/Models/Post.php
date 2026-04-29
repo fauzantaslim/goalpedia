@@ -30,6 +30,7 @@ class Post extends Model implements HasMedia
         'user_id',
         'category_id',
         'title',
+        'title_cover',
         'slug',
         'excerpt',
         'meta_description',
@@ -62,8 +63,6 @@ class Post extends Model implements HasMedia
     /**
      * Returns the correct full URL for the post.
      * Uses 3-segment route if parent category exists, otherwise 2-segment route.
-     *
-     * @return string
      */
     public function postUrl(): string
     {
