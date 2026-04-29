@@ -13,7 +13,7 @@
                 <p class="text-[10px] font-black uppercase tracking-[0.25em] text-[var(--color-accent-secondary)]">Legalitas & Informasi</p>
             </div>
             <h1 class="text-4xl font-black uppercase leading-tight tracking-tight text-[var(--color-text-primary)] md:text-6xl">Privacy Policy</h1>
-            <p class="mt-4 text-xs font-black tracking-widest uppercase text-[var(--color-text-secondary)] opacity-60">Pembaruan Terakhir: 21 April 2026</p>
+            <p class="mt-4 text-xs font-black tracking-widest uppercase text-[var(--color-text-secondary)] opacity-60">Pembaruan Terakhir: 29 April 2026</p>
         </header>
 
         <div class="static-page-prose md:text-lg">
@@ -43,7 +43,7 @@
                 </li>
                 <li>
                     <strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;,
-                    &quot;Us&quot; or &quot;Our&quot; in this Privacy Policy) refers to Finlogy.
+                    &quot;Us&quot; or &quot;Our&quot; in this Privacy Policy) refers to Goalpedia.
                 </li>
                 <li>
                     <strong>Cookies</strong> are small files that are placed on Your computer, mobile device or any other
@@ -75,9 +75,9 @@
                     the Service or from the Service infrastructure itself (for example, the duration of a page visit).
                 </li>
                 <li>
-                    <strong>Website</strong> refers to Finlogy, accessible from <a
-                        href="https://finlogy.fauzantaslim.biz.id" rel="external nofollow noopener"
-                        target="_blank">https://finlogy.fauzantaslim.biz.id</a>.
+                    <strong>Website</strong> refers to Goalpedia, accessible from <a
+                        href="https://goalpedia.fauzantaslim.biz.id" rel="external nofollow noopener"
+                        target="_blank">https://goalpedia.fauzantaslim.biz.id</a>.
                 </li>
                 <li>
                     <strong>You</strong> means the individual accessing or using the Service, or the company, or other
@@ -143,11 +143,11 @@
             <p>If you have any questions about this Privacy Policy, You can contact us:</p>
             <ul>
                 <li>
-                    By email: <a href="mailto:contact@finlogy.fauzantaslim.biz.id">contact@finlogy.fauzantaslim.biz.id</a>
+                    By email: <a href="mailto:contact@goalpedia.fauzantaslim.biz.id">contact@goalpedia.fauzantaslim.biz.id</a>
                 </li>
                 <li>
-                    By visiting: <a href="https://finlogy.fauzantaslim.biz.id/kontak"
-                        target="_blank">https://finlogy.fauzantaslim.biz.id/kontak</a>
+                    By visiting: <a href="https://goalpedia.fauzantaslim.biz.id/kontak"
+                        target="_blank">https://goalpedia.fauzantaslim.biz.id/kontak</a>
                 </li>
             </ul>
         </div>

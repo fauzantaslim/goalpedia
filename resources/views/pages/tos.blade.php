@@ -18,19 +18,19 @@
                 <p class="text-[10px] font-black uppercase tracking-[0.25em] text-[var(--color-accent-secondary)]">Legalitas & Informasi</p>
             </div>
             <h1 class="text-4xl font-black uppercase leading-tight tracking-tight text-[var(--color-text-primary)] md:text-6xl">Syarat & Ketentuan</h1>
-            <p class="mt-4 text-xs font-black tracking-widest uppercase text-[var(--color-text-secondary)] opacity-60">Pembaruan Terakhir: 21 April 2026</p>
+            <p class="mt-4 text-xs font-black tracking-widest uppercase text-[var(--color-text-secondary)] opacity-60">Pembaruan Terakhir: 29 April 2026</p>
         </header>
         
 
         <div class="static-page-prose md:text-lg">
             <h2>AGREEMENT TO OUR LEGAL TERMS</h2>
-            <p>We are <strong>Finlogy (operated by Fauzan Taslim Hidayat)</strong>, doing business as <strong>Finlogy</strong> ("Company," "we," "us," "our"). We operate the website <a href="https://finlogy.fauzantaslim.biz.id" target="_blank">https://finlogy.fauzantaslim.biz.id</a> (the "Site"), as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").</p>
+            <p>We are <strong>Goalpedia (operated by Fauzan Taslim Hidayat)</strong>, doing business as <strong>Goalpedia</strong> ("Company," "we," "us," "our"). We operate the website <a href="https://goalpedia.fauzantaslim.biz.id" target="_blank">https://goalpedia.fauzantaslim.biz.id</a> (the "Site"), as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").</p>
             
-            <p>Finlogy is a web-based platform that provides articles, insights, and educational content related to finance, investing, and personal financial management. The content published on this website is intended for informational and educational purposes only.</p>
+            <p>Goalpedia is a web-based platform that provides articles, insights, and entertaining content related to football, match analysis, and sports journalism. The content published on this website is intended for informational and entertainment purposes only.</p>
 
-            <p>You can contact us by email at <a href="mailto:contact@finlogy.fauzantaslim.biz.id">contact@finlogy.fauzantaslim.biz.id</a> or by mail to Bogor, Indonesia.</p>
+            <p>You can contact us by email at <a href="mailto:contact@goalpedia.fauzantaslim.biz.id">contact@goalpedia.fauzantaslim.biz.id</a> or by mail to Bogor, Indonesia.</p>
 
-            <p>These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and Finlogy (operated by Fauzan Taslim Hidayat), concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.</p>
+            <p>These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and Goalpedia (operated by Fauzan Taslim Hidayat), concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.</p>
 
             <p>The Services are intended for users who are at least 18 years old. Persons under the age of 18 are not permitted to use or register for the Services.</p>
 
@@ -95,7 +95,7 @@
             <p>We reserve the right, but not the obligation, to: (1) monitor the Services for violations of these Legal Terms; (2) take appropriate legal action against anyone who violates the law or these Legal Terms; (3) manage the Services in a manner designed to protect our rights and property and to facilitate the proper functioning of the Services.</p>
 
             <h2 id="privacy">9. PRIVACY POLICY</h2>
-            <p>We care about data privacy and security. Please review our Privacy Policy: <a href="https://finlogy.fauzantaslim.biz.id/privacy-policy" target="_blank">https://finlogy.fauzantaslim.biz.id/privacy-policy</a>. By using the Services, you agree to be bound by our Privacy Policy, which is incorporated into these Legal Terms.</p>
+            <p>We care about data privacy and security. Please review our Privacy Policy: <a href="https://goalpedia.fauzantaslim.biz.id/privacy-policy" target="_blank">https://goalpedia.fauzantaslim.biz.id/privacy-policy</a>. By using the Services, you agree to be bound by our Privacy Policy, which is incorporated into these Legal Terms.</p>
 
             <h2 id="terms">10. TERM AND TERMINATION</h2>
             <p>These Legal Terms shall remain in full force and effect while you use the Services. WITHOUT LIMITING ANY OTHER PROVISION OF THESE LEGAL TERMS, WE RESERVE THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT NOTICE OR LIABILITY, DENY ACCESS TO AND USE OF THE SERVICES TO ANY PERSON FOR ANY REASON.</p>
@@ -104,7 +104,7 @@
             <p>We reserve the right to change, modify, or remove the contents of the Services at any time or for any reason at our sole discretion without notice. We cannot guarantee the Services will be available at all times.</p>
 
             <h2 id="law">12. GOVERNING LAW</h2>
-            <p>These Legal Terms shall be governed by and defined following the laws of Indonesia. Finlogy (operated by Fauzan Taslim Hidayat) and yourself irrevocably consent that the courts of Indonesia shall have exclusive jurisdiction to resolve any dispute which may arise.</p>
+            <p>These Legal Terms shall be governed by and defined following the laws of Indonesia. Goalpedia (operated by Fauzan Taslim Hidayat) and yourself irrevocably consent that the courts of Indonesia shall have exclusive jurisdiction to resolve any dispute which may arise.</p>
 
             <h2 id="disputes">13. DISPUTE RESOLUTION</h2>
             <p>You agree to irrevocably submit all disputes related to these Legal Terms to the jurisdiction of the Indonesia courts.</p>
@@ -133,9 +133,9 @@
             <h2 id="contact">21. CONTACT US</h2>
             <p>In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at:</p>
             <p>
-                <strong>Finlogy (operated by Fauzan Taslim Hidayat)</strong><br>
+                <strong>Goalpedia (operated by Fauzan Taslim Hidayat)</strong><br>
                 Bogor, Indonesia<br>
-                Email: <a href="mailto:contact@finlogy.fauzantaslim.biz.id">contact@finlogy.fauzantaslim.biz.id</a>
+                Email: <a href="mailto:contact@goalpedia.fauzantaslim.biz.id">contact@goalpedia.fauzantaslim.biz.id</a>
             </p>
         </div>
 

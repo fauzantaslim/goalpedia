@@ -356,7 +356,7 @@
                                                     @if($rCover = $r->getFirstMediaUrl('post_covers', 'thumb'))
                                                         <img src="{{ $rCover }}" alt="{{ $r->title }}" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110">
                                                     @else
-                                                        <div class="flex h-full w-full items-center justify-center bg-border/10 text-[6px] font-bold uppercase tracking-tighter text-text-secondary/60">Finlogy</div>
+                                                        <div class="flex h-full w-full items-center justify-center bg-border/10 text-[6px] font-bold uppercase tracking-tighter text-text-secondary/60">Goalpedia</div>
                                                     @endif
                                                 </div>
                                                 <div class="flex min-w-0 flex-col">

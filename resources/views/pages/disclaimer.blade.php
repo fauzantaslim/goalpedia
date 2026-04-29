@@ -18,7 +18,7 @@
 
         <div class="static-page-prose md:text-lg">
             <h1>Disclaimer</h1>
-            <p>Last updated: April 21, 2026</p>
+            <p>Last updated: April 29, 2026</p>
             <h2>Interpretation and Definitions</h2>
             <h3>Interpretation</h3>
             <p>The words whose initial letters are capitalized have meanings defined under the following conditions.
@@ -29,7 +29,7 @@
             <ul>
                 <li>
                     <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or
-                        &quot;Our&quot; in this Disclaimer) refers to Finlogy.</p>
+                        &quot;Our&quot; in this Disclaimer) refers to Goalpedia.</p>
                 </li>
                 <li>
                     <p><strong>Service</strong> refers to the Website.</p>
@@ -39,8 +39,8 @@
                         behalf of which such individual is accessing or using the Service, as applicable.</p>
                 </li>
                 <li>
-                    <p><strong>Website</strong> refers to Finlogy, accessible from <a href="https://finlogy.fauzantaslim.biz.id"
-                            rel="external nofollow noopener" target="_blank">https://finlogy.fauzantaslim.biz.id</a>.</p>
+                    <p><strong>Website</strong> refers to Goalpedia, accessible from <a href="https://goalpedia.fauzantaslim.biz.id"
+                            rel="external nofollow noopener" target="_blank">https://goalpedia.fauzantaslim.biz.id</a>.</p>
                 </li>
             </ul>
             <h2>Disclaimer</h2>
@@ -97,11 +97,11 @@
             <p>If you have any questions about this Disclaimer, You can contact Us:</p>
             <ul>
                 <li>
-                    <p>By email: contact@finlogy.fauzantaslim.biz.id</p>
+                    <p>By email: contact@goalpedia.fauzantaslim.biz.id</p>
                 </li>
                 <li>
-                    <p>By visiting this page on our website: <a href="https://finlogy.fauzantaslim.biz.id/kontak"
-                            rel="external nofollow noopener" target="_blank">https://finlogy.fauzantaslim.biz.id/kontak</a></p>
+                    <p>By visiting this page on our website: <a href="https://goalpedia.fauzantaslim.biz.id/kontak"
+                            rel="external nofollow noopener" target="_blank">https://goalpedia.fauzantaslim.biz.id/kontak</a></p>
                 </li>
             </ul>
         </div>
