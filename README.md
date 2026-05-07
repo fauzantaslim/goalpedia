@@ -1,58 +1,267 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Goalpedia
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern football content platform built with Laravel 12 and Filament 5. Goalpedia delivers football news, stats, and insights through a clean, sporty editorial interface backed by a powerful admin panel.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Tech Stack
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+| Layer | Technology |
+|---|---|
+| **Backend** | PHP 8.3+, Laravel 12 |
+| **Admin Panel** | Filament 5 |
+| **Frontend** | Blade, Tailwind CSS v4, Vite |
+| **Database** | MySQL |
+| **Media** | Spatie Media Library + Google Drive |
+| **Auth & ACL** | Spatie Laravel Permission |
+| **SEO** | artesaos/seotools, Spatie Sitemap |
+| **Search** | MySQL Full-Text Search |
+| **Testing** | Pest 4 |
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Blog Engine** — Posts with categories (parent/child hierarchy), tags, excerpts, meta descriptions, and FAQ sections
+- **Dynamic Sitemap** — Auto-generated `/sitemap.xml` covering pages, categories, tags, and published posts
+- **Full-Text Search** — MySQL full-text index with fuzzy fallback support
+- **Admin Panel** — Filament-powered dashboard with resources for Posts, Categories, Tags, Users, Roles, Permissions, and Contact Messages
+- **Media Management** — Image upload with automatic WebP conversion (thumbnail + optimized sizes) via Spatie Media Library
+- **Google Drive Backup** — Automated backups pushed to Google Drive via Spatie Backup
+- **Activity Log** — Audit trail on Posts and Categories via Spatie Activity Log
+- **General Settings** — Site-wide settings managed from the admin panel
+- **Contact Form** — Rate-limited contact form (5 requests/min per IP)
+- **Static Pages** — About Us, Contact, Privacy Policy, Disclaimer, Terms & Conditions, Pedoman Media Siber
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## Prerequisites
 
-## Agentic Development
+- PHP >= 8.3
+- Composer
+- Node.js >= 20 & npm
+- MySQL 8.0+
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+---
+
+## Installation
+
+### 1. Clone the repository
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone <repository-url> goalpedia
+cd goalpedia
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. One-command setup
 
-## Contributing
+```bash
+composer run setup
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+This will:
+- Install PHP dependencies (`composer install`)
+- Copy `.env.example` to `.env`
+- Generate an application key
+- Run database migrations
+- Install Node.js dependencies
+- Build frontend assets
 
-## Code of Conduct
+### 3. Configure environment
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Open `.env` and update the following values:
 
-## Security Vulnerabilities
+```env
+APP_NAME=Goalpedia
+APP_URL=http://localhost
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=goalpedia
+DB_USERNAME=root
+DB_PASSWORD=
+
+# Google Drive (for backups)
+GOOGLE_DRIVE_CLIENT_ID=
+GOOGLE_DRIVE_CLIENT_SECRET=
+GOOGLE_DRIVE_REFRESH_TOKEN=
+GOOGLE_DRIVE_FOLDER_ID=
+GOOGLE_DRIVE_FOLDER=
+
+# Mail
+MAIL_MAILER=smtp
+MAIL_HOST=
+MAIL_PORT=587
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_FROM_ADDRESS=hello@goalpedia.com
+MAIL_FROM_NAME=Goalpedia
+```
+
+### 4. Run migrations & seed
+
+```bash
+php artisan migrate --seed
+```
+
+### 5. Create the first admin user
+
+```bash
+php artisan make:filament-user
+```
+
+---
+
+## Development
+
+Start all services concurrently (server + queue + Vite):
+
+```bash
+composer run dev
+```
+
+Or run them individually:
+
+```bash
+php artisan serve          # Laravel dev server
+php artisan queue:listen   # Queue worker
+npm run dev                # Vite HMR
+```
+
+---
+
+## Project Structure
+
+```
+app/
+├── Filament/
+│   ├── Pages/
+│   │   ├── BackupManager.php      # Manage site backups
+│   │   └── GeneralSettings.php    # Site-wide settings page
+│   └── Resources/
+│       ├── Activities/            # Activity log viewer
+│       ├── Categories/            # Category CRUD
+│       ├── ContactMessages/       # Contact form submissions
+│       ├── Permissions/           # Permission management
+│       ├── PostFaqs/              # Post FAQ management
+│       ├── Posts/                 # Post CRUD with media
+│       ├── Roles/                 # Role management
+│       ├── TagResource/           # Tag management
+│       └── Users/                 # User management
+├── Http/
+│   └── Controllers/
+│       ├── BlogController.php     # Homepage, category, tag, search, author
+│       ├── PageController.php     # Static pages
+│       └── PostController.php     # Post detail (2-segment & 3-segment URLs)
+├── Models/
+│   ├── Category.php               # Hierarchical categories (parent/child)
+│   ├── Post.php                   # Blog posts with media, tags, FAQs
+│   ├── PostFaq.php                # FAQ items per post
+│   ├── SiteSetting.php            # Site configuration
+│   ├── User.php
+│   └── ...
+├── Observers/                     # Model event observers
+├── Providers/                     # Service providers
+└── Settings/
+    └── GeneralSettings.php        # Spatie settings class
+
+database/
+├── factories/                     # Model factories for testing/seeding
+├── migrations/                    # All database migrations
+├── seeders/                       # Database seeders
+└── settings/                      # Spatie settings migrations
+
+resources/
+├── css/                           # App styles (Tailwind v4)
+├── js/                            # App JavaScript
+└── views/
+    ├── blog/                      # Blog views (index, show, category, tag, author, search)
+    ├── components/                # Reusable Blade components
+    ├── errors/                    # Error pages
+    ├── layouts/                   # App layout (app.blade.php)
+    └── pages/                     # Static pages (about, contact, privacy, tos, etc.)
+
+routes/
+├── console.php                    # Scheduled commands
+└── web.php                        # All web routes
+```
+
+---
+
+## URL Structure
+
+| Route | Description |
+|---|---|
+| `/` | Blog homepage |
+| `/kategori/{slug}` | Category listing |
+| `/tag/{slug}` | Tag listing |
+| `/search` | Full-text search |
+| `/penulis/{username}` | Author page |
+| `/{category}/{post}` | Post (flat category) |
+| `/{parent}/{category}/{post}` | Post (nested category) |
+| `/about-us` | About page |
+| `/contact` | Contact form |
+| `/privacy-policy` | Privacy policy |
+| `/disclaimer` | Disclaimer |
+| `/terms-and-conditions` | Terms & Conditions |
+| `/pedoman-media-siber` | Pedoman Media Siber |
+| `/sitemap.xml` | Dynamic XML sitemap |
+| `/admin` | Filament admin panel |
+
+---
+
+## Testing
+
+```bash
+# Run all tests
+composer run test
+
+# Run with filter
+php artisan test --compact --filter=PostTest
+```
+
+---
+
+## Code Style
+
+This project uses Laravel Pint for code formatting. Run after any PHP changes:
+
+```bash
+vendor/bin/pint --dirty
+```
+
+---
+
+## Deployment
+
+Goalpedia can be deployed to [Laravel Cloud](https://cloud.laravel.com/) or any standard PHP host.
+
+Before deploying:
+
+```bash
+composer install --no-dev --optimize-autoloader
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+npm run build
+```
+
+---
+
+## Brand
+
+| | |
+|---|---|
+| **Primary Color** | `#093FB4` (Blue — trust + sporty) |
+| **Accent Color** | `#ED3500` (Red — energy + urgency) |
+| **Background** | `#FFFCFB` (Off-white) |
+| **Font** | Poppins |
+
+See [`docs/brand-guidelines.md`](docs/brand-guidelines.md) for full design specifications.
+
+---
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+MIT
